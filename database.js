@@ -11,7 +11,7 @@ class customerDB{
             port: process.env.PGPORT,
             sslcert: process.env.PGSSLROOTCERT,
             ssl: {
-                rejectUnauthorized: true,
+                rejectUnauthorized: false,
                 ca: fs.readFileSync('./root.crt').toString()
             }
 
