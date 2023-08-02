@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+    body
+        .card.row.mx-auto.cardopacity(style="width: 30rem")
+            .card-header.text-center
+                h3
+                    b CSV Upload
+            ul.col-6.mx-auto.text-center
+                form.form(action='/uploadinfo', method='post', enctype='multipart/form-data')
+                    br
+                    label.text-black(for='csvFile')
+                        b Import CSV
+                    input(type='file', name='csvFile', id='csvFile')
+                    br
+                    button.btn.btn-outline-success.my-2(type='submit', value ="upload")
+                        b Add Customer
+                    a.btn.btn-outline-primary.mx-2(href='/')
+                        b Home
+                if message
+                    div.alert.alert-success
+                        p= message
+

@@ -1,0 +1,42 @@
+extends layout.pug
+
+mixin getCustomers(customer)
+    ul
+        each customer in customers
+            li
+
+block content
+    body
+        .container
+            h1 
+                b Customer List
+            a.btn.btn.btn-outline-primary(href='/').justify-content-end
+                b Home
+            table
+                thead 
+                    tr
+                        th Billing Name
+                        th Shipping Name
+                        th Billing Address
+                        th Shipping Address
+                        th Phone Number
+                        th Email Address
+                    tr
+                tbody
+                    each customer in customers
+                        tr
+                            td=customer.billing_name
+
+                            td=customer.shipping_name
+
+                            td=customer.billing_address
+
+                            td=customer.shipping_address
+
+                            td=customer.phone_number
+
+                            td=customer.email
+            br
+            a.btn.btn.btn-outline-primary(href='/')
+                b Home
+
