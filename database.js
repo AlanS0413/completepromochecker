@@ -9,8 +9,10 @@ class customerDB{
             host: process.env.PGHOST,
             database: process.env.PGDATABASE,
             port: process.env.PGPORT,
+            sslcert: process.env.PGSSLROOTCERT,
             ssl: {
                 rejectUnauthorized: true,
+                ca: fs.readFileSync('./root.crt').toString()
             }
 
         });
