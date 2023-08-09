@@ -3,13 +3,13 @@ const router = express.Router();
 
 
 
-router.get('/check', async (req, res) => {
+router.get('/add', async (req, res) => {
     const custs = await req.db.findAllCustomers();
-    res.render('check', { title: 'Check Customer Data', show_login: true, custs });
+    res.render('app', { title: 'Add Customer Data', show_login: true, custs });
 });
 
 
-router.post('/check', async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
         const db = await req.db;
 
@@ -36,8 +36,6 @@ router.post('/check', async (req, res) => {
 
         console.log( customerExists , 'customerExists')
 
-        console.log( formData , 'formdata')
-
         if (!customerExists) {
             const newCustomer = await req.db.addCustomer(
                 formData.billing_name,
@@ -49,14 +47,14 @@ router.post('/check', async (req, res) => {
                 formData.username
             );
 
-            res.render('check', {
-                title: "Customer Add / Check",
+            res.render('add', {
+                title: "Add Customer Data",
                 message: "Customer Added!",
             });
         } else {
             // Render the same form page with error message
-            res.render('check', {
-                title: "Customer Add / Check",
+            res.render('add', {
+                title: "Add Customer Data",
                 message: "Customer Already Exists!",
             });
         }
