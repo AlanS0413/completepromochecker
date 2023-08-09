@@ -27,7 +27,7 @@ app.get('/data', async (req, res) => {
 
 
 const mainRouter = require('./routes/main');
-const checkRouter = require('./routes/check');
+const checkRouter = require('./routes/add');
 const uploadRouter = require('./routes/uploadinfo');
 const viewRouter = require('./routes/viewdata');
 
