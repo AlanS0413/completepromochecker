@@ -5,7 +5,6 @@ fetch('/data')
     .then(res => res.json())
     .then(data => {
         const customerCards = document.getElementById("customercard-container");
-        const visibleCustomersContainer = document.getElementById("visible-customers-container");
         const template = document.getElementById("customercard-template");
 
         customers = data.map(customer => {
