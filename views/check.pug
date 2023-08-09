@@ -15,19 +15,19 @@ block content
                 form.form(action='/check', method='post')
                     label.my-2.text-black(for='billing_name')
                         b Billing Name
-                        input#billing_name(type='text', name='billing_name', placeholder="Billing Name" oninput="this.value = this.value.trim().toLowerCase()")
+                        input#billing_name(type='text', name='billing_name', placeholder="Billing Name" oninput="this.value.toLowerCase()")
 
                     label.text-black(for='shipping_name')
                         b Shipping Name
-                        input#shipping_name(type='text', name='shipping_name', placeholder="Shipping Name" oninput="this.value = this.value.trim().toLowerCase()")
+                        input#shipping_name(type='text', name='shipping_name', placeholder="Shipping Name" oninput="this.value.toLowerCase()")
 
                     label.my-2.text-black(for='billing_address')
                         b Billing Address
-                        input#billing_address(type='text', name='billing_address', placeholder="Billing Address" oninput="this.value = this.value.trim().toLowerCase()")
+                        input#billing_address(type='text', name='billing_address', placeholder="Billing Address" oninput="this.value.toLowerCase()")
 
                     label.my-2.text-black(for='shipping_address')
                         b Shipping Address
-                        input#shipping_address(type='text', name='shipping_address', placeholder="Shipping Address" oninput="this.value = this.value.trim().toLowerCase()")
+                        input#shipping_address(type='text', name='shipping_address', placeholder="Shipping Address" oninput="this.value.toLowerCase()")
 
                     label.my-2.text-black(for='email')
                         b Email
@@ -35,11 +35,11 @@ block content
 
                     label.my-2.text-black(for='phone_number')
                         b Phone Number
-                        input#phone_number(type='text', name='phone_number', placeholder="123456789" oninput="this.value = this.value.trim()")
+                        input#phone_number(type='text', name='phone_number', placeholder="123456789")
 
                     label.my-2.text-black(for='username')
                         b Username
-                        input#username(type='text', name='username', placeholder="@user" oninput="this.value = this.value.trim().toLowerCase()")
+                        input#username(type='text', name='username', placeholder="@user" oninput="this.value.toLowerCase()")
                     br
                     button.btn.btn-outline-success.my-2(type='submit', value ="upload")
                         b Check Data
