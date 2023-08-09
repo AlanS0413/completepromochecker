@@ -12,31 +12,27 @@ block content
                 b Customer List
             a.btn.btn.btn-outline-primary(href='/').justify-content-end
                 b Home
-            table
-                thead 
-                    tr
-                        th Billing Name
-                        th Shipping Name
-                        th Billing Address
-                        th Shipping Address
-                        th Phone Number
-                        th Email Address
-                    tr
-                tbody
-                    each customer in customers
-                        tr
-                            td=customer.billing_name
+            .col-lg-3.mx-auto
+                form#searchform(role="search")
+                    input#searchinput.rounded.col-12.my-2(type="search", placeholder="Search", aria-label="Search")
+            .row
+                #customercard-container
+                template#customercard-template
+                    .card#customercard-container
+                        .card-title#customercardtitle.text-center
+                        .card-text#customercardtext.text-center
+                #visiblecustomercards-container
 
-                            td=customer.shipping_name
 
-                            td=customer.billing_address
 
-                            td=customer.shipping_address
-
-                            td=customer.phone_number
-
-                            td=customer.email
-            br
             a.btn.btn.btn-outline-primary(href='/')
                 b Home
+            script.
+                document.addEventListener('DOMContentLoaded', function() {
+                    const template = document.querySelector('#customercard-template');
+                    const card = template.content.querySelector('#customercard');
+                    const cardTitle = template.content.querySelector('#customercardtitle');
+                    const cardText = template.content.querySelector('#customercardtext');
+                });
+
 

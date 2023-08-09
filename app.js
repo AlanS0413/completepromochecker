@@ -20,6 +20,11 @@ app.use(async (req, res, next) => {
   }
 });
 
+app.get('/data', async (req, res) => {
+  const data = await req.db.findAllCustomers();
+  res.json(data);
+});
+
 
 const mainRouter = require('./routes/main');
 const checkRouter = require('./routes/check');
@@ -28,6 +33,8 @@ const viewRouter = require('./routes/viewdata');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(express.static('public/styles'));
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 

@@ -47,7 +47,7 @@ router.post('/uploadinfo', upload.single('csvFile'), async (req, res) => {
                             billing_address: record.billing_address.toLowerCase().trim(),
                             shipping_address: record.shipping_address.toLowerCase().trim(),
                             email: record.email.toLowerCase().trim(),
-                            phone_number: record.phone_number.toLowerCase().trim(),
+                            phone_number: record.phone_number.trim(),
                             username: record.username.toLowerCase().trim()
                         };
 
