@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/add', async (req, res) => {
     const custs = await req.db.findAllCustomers();
-    res.render('app', { title: 'Add Customer Data', show_login: true, custs });
+    res.render('add', { title: 'Add Customer Data', show_login: true, custs });
 });
 
 
