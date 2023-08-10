@@ -12,7 +12,7 @@ block content
                 h3
                     b Customer Add
             ul.col-6.mx-auto.text-center
-                form.form(action='/check', method='post')
+                form.form(action='/add', method='post')
                     label.my-2.text-black(for='billing_name')
                         b Billing Name
                         input#billing_name(type='text', name='billing_name', placeholder="Billing Name" oninput="this.value.toLowerCase()")
