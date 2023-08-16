@@ -27,7 +27,6 @@ app.get('/data', async (req, res) => {
 
 
 const mainRouter = require('./routes/main');
-const checkRouter = require('./routes/add');
 const uploadRouter = require('./routes/uploadinfo');
 const viewRouter = require('./routes/viewdata');
 
@@ -46,7 +45,6 @@ app.use(cookieParser());
 
 app.use('/', mainRouter);
 app.use('/', uploadRouter);
-app.use('/', checkRouter);
 app.use('/', viewRouter);
 
 module.exports = app;

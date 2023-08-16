@@ -31,9 +31,9 @@ fetch('/data')
             username:customer.username,
             element:card}
         });
-        const searchInput = document.querySelector("input#searchinput[type='search']")
+        const formInput = document.querySelector("#customerform")
 
-        searchInput.addEventListener("input", e => {
+        formInput.addEventListener("input", e => {
             const value = e.target.value.toLowerCase()
             const visibleCustomers = customers.filter(customer => {
                 const isVisible =
